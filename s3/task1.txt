@@ -1,0 +1,11 @@
+ Task 1: Create an S3 bucket
+Background
+You have been tasked by your manager to assist with the roll-out of a new application that will require access to data stored in an S3 bucket. As a proof of concept, you have been tasked to setup an environment to demonstrate how this will work.
+
+The bucket must be accessible from an EC2 instance, but not from the Internet. In addition, the application is expected to operate on the data without manual intervention. The need to access the data immediately will decrease 30 days after it is uploaded.
+Task
+
+Set up an S3 bucket that does not allow public access. In addition, the bucket must include a Lifecycle policy that transitions all bucket objects to the One Zone - IA storage class after 30 days. The bucket also needs a tag called 'Owner' with the name of the team who created the bucket.
+Task Validation
+
+When you have completed the requirements, enter the S3 bucket name in the text box above and click Submit Answer to validate your work.

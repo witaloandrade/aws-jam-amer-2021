@@ -1,0 +1,82 @@
+ Task 1: First things first - Internet Access to and from the NAT Instance
+Background
+
+Review the architecture diagram. The private subnets will access the Internet via the NAT Instance. Currently the connection from the NAT Instance to the Webserver Instance is timing out.
+
+Therefore, we should first verify Internet Connectivity from the NAT Instance. What VPC configurations are needed for Internet Connectivity from the NAT Instance?
+Your Task
+
+Log into the NAT instance to troubleshoot outbound network connectivity. Make appropriate changes to AWS configurations until outbound traffic from the NAT instances is working.
+
+To verify the Internet connectivity from the NAT Instance, you need to first log into it. Use the Bastion host as the jump host to log into the NAT Instance.
+
+To successfully complete the task, you should accomplish the following:
+
+    Access the Webserver Instance from the NAT Instance
+
+    You can verify the connectivity by running the following cURL command:
+
+     curl -Iv http://webserver-public-ip/ 
+
+    You can use the VPC Flow logs to see if the HTTP traffic from the NAT Instance is in ACCEPT state. VPC flow logs is a great feature which helps in troubleshooting connectivity issues. To view the VPC flow logs, go to the logs section on the CloudWatch console and look for the log group FlowLogsGroup. Look for the NAT Instance ENI to view the logs for the NAT Instance. If you don't see the logs from the NAT Instance Private IP to the Webserver Public IP, in the flow logs, it means either the logs haven’t been published yet or you don’t have Internet connectivity to the instance (no route to the Internet). If the traffic is in REJECT state, it means either the Security Group or the NACL is not allowing TCP Port 80 traffic from the NAT Instance to the Webserver public IP.
+
+    The format for the VPC flow log is:
+
+    [version] [account-id] [interface-id] [srcaddr] [dstaddr] [srcport] [dstport] [protocol] [packets] [bytes] [start] [end] [action] [log-status] 
+
+    Refer to the VPC Flow log documentation for more details on flow logs
+
+    Things you should avoid doing:
+        Allowing “All traffic” from or to “0.0.0.0/0” or “Anywhere” in the security group and Network ACL rules (mainly inbound).
+        The HTTP application is running on port 80 on the Webserver Instance. Avoid allowing “ALL TCP” ports.
+
+Getting Started
+
+    Download the private key pair from the top right corner of the challenge "SSH Key Pair".
+
+    You will use this key to SSH into the Bastion Instance. From the bastion host, you can SSH into the NAT Instance. Your key must not be publicly viewable for SSH. Use the command chmod 400 your-key-name.pem if needed. To SSH into the NAT Instance from the bastion Instance, you will need the private key on the bastion host. This is not secured and you can use SSH forwarding to avoid saving keys on bastion Instance.
+
+    For Linux/Mac/cygwin users, we suggest using ssh-agent. The steps needed to use SSH forwarding are -
+
+        Add private key to keychain by using the command -
+
+        ssh-add -K your-key-name.pem 
+
+        Use the followingcommand to SSH into the Bastion Instance -
+
+        ssh -A ec2-user@Bastion-Instance-Public-IPAddress 
+
+        For windows users and for more details SSH forwarding and how to configure ssh-agent on Windows machine, refer to the link.
+
+    Once you are logged into the bastion host, use the following command to SSH from the bastion host into the NAT Instance
+
+    ssh ec2-user@10.0.1.4
+
+    Validate that the web server is running and publicly accessbile
+
+    The Webserver instance is accessible over the Internet. Use the public IP of this Instance found in the Output Properties of your challenge as WebServerPublicIp to verify Internet connectivity from your local machine.
+    Inventory
+
+    VPC:
+        Name - VPC-JAM
+        CIDR - 10.0.0.0/16
+
+    Bastion Instance:
+        Public IP : You can get it from the Outputs Properties of this challenge BastionInstanceEIP
+
+    NAT Instance:
+        Private IP: 10.0.1.4
+
+    WebServer Instance:
+        Public IP : You can get it from the Outputs Properties of this challenge WebServerPublicIp
+
+Services you should use
+
+    VPC
+    EC2
+
+Task Validation
+
+At the end of this task, you should be able to get a 200 O.K response for the cURL command. This will verify Internet Connectivity from the NAT Instance. The task will automatically complete once you have the right VPC configurations.
+
+Note: The task will NOT complete if you have allowed traffic from 0.0.0.0/0 in the inbound rules.

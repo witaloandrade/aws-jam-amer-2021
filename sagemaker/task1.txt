@@ -1,0 +1,24 @@
+ Task 1: Drive Data Transformations through Amazon Sagemaker and AWS Data Wrangler
+Completed!
+Backgroud
+
+In this Task you will use Amazon Sagemaker notebooks to run commonly used Data Transformations using AWS Wrangler library.
+Your Task
+
+    Open the JupyterLab of the Amazon Sagemaker Notebook Instance named "Sagemaker-Notebook-Code-Commit".
+    Copy the sample notebook from the location s3://aws-jam-challenge-resources/aws-cdk-sagemaker-notebook/Example-Parquet-Datasets.ipynb into the above mentioned Amazon Sagemaker Notebook Instance's sagemaker-notebook directory (you can use Terminal within SageMaker Notebook instance to do this step).
+    Execute all the cells in the notebook and verify the transformed data in Amazon S3.
+
+Inventory
+
+    SageMaker Notebook Instance : Sagemaker-Notebook-Code-Commit
+    Amazon S3 : s3://aws-jam-challenge-resources/aws-cdk-sagemaker-notebook/Example-Parquet-Datasets.ipynb
+
+Service You Should Use
+
+    Amazon SageMaker
+    Amazon S3
+
+Task Validation
+
+The task will be automatically complete once you find the solution, in addition you can always check your progress by pressing the “Check my progress” Button in the challenge details screen.

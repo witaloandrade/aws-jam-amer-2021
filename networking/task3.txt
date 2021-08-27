@@ -1,0 +1,41 @@
+ Task 3: DNS in VPC
+Completed!
+Background:
+
+Congratulations on completing Task 2 !!! You should now be able to access the Internet (using IP) from the Private Instance. However, for some reason we still can't reach the Webserver Instance by DNS name! Let's fix the configurations for that as well!
+Your Task:
+
+To successfully complete this task, you should accomplish the following:
+
+    Run the following command from the Private Instance:
+
+     curl -Iv http://webserver-public-dns-name 
+
+    You can find the public DNS name of the web server instance in the Challenge Output Properties as WebServerPublicDNSName. Running this command should return a 200 O.K response.
+
+
+Getting Started:
+
+VPC needs to be correctly configured in order for the DNS resolution to work from within the VPC. In this task, you need to verify the VPC configurations needed for DNS resolution. Use the command dig webserver-public-domain-name or nslookup webserver-public-domain-name to test DNS resolution from the Private Instance.
+Inventory
+
+    Bastion Instance:
+        Public IP : You can get it from the Outputs Properties of this challenge BastionInstanceEIP
+    Private Instance:
+        Private IP: 10.0.2.4
+    WebServer Instance:
+        WebServer Public DNS Name: You can get it from the Outputs Properties of this challenge WebServerPublicDNSName
+
+Service you should use
+
+    VPC
+    EC2
+
+Task Validation:
+
+At the end of this task, you should be able to access the Webserver Instance using the Public domain name.
+
+Hint: Changes to DHCP option will be eventually picked up be when the DHCP lease times out. To speed up this process for the purpose of this challenge you can renew the lease with
+
+dhclient -r; sudo dhclient 
+

@@ -1,0 +1,41 @@
+
+Overview
+
+Two brothers named Jason and Yamil are co-founders of a startup company called The Lamb Jam that leverages AWS. They created a AWS CodePipeline Pipeline to show their technical chops to their possible investors, but they had a disagreement about whether JSON or YAML should be used in their configurations, which led to Jason buying out Yamil so he could use the methods he thought best for the company. However, now that Yamil is gone, the pipeline is broken and Jason needs to figure out how to fix it.
+
+Fix the build and get the pipeline running so that Jason will be able to demo it to investors in time to meet their funding deadline.
+Completed!
+Background
+
+Yamil had setup a demo pipeline using AWS CodePipeline that uses AWS CodeCommit for source code, and AWS CodeBuild for running the build. Now that Yamil is no longer part of The Lamb Jam company, Jason attempted to change the buildspec used by AWS CodeBuild and he can't figure out how to get it to work.
+Getting Started
+
+Navigate to the Challenge Outputs screen for this Jam Challenge (available on the left menu). Write down the values for the following items. You will be using them to solve this challenge.
+
+    ChallengeId
+
+Inventory
+
+    AWS CodeCommit Repository named ${ChallengeId}.
+    AWS CodeBuild Project named ${ChallengeId}.
+    AWS CodePipeline Pipeline named ${ChallengeId}.
+
+Your Task
+
+The Build step in the Pipeline is currently failing due to a missing or malformed buildspec. Fix the buildspec in the repository so that the pipeline completes successfully.
+
+HINTS:
+
+    A change in the AWS CodeCommit Repository should automatically trigger a Pipeline execution.
+    The AWS CodePipeline Pipeline may initially be in a failed state with an IAM AccessDenied error, and that is expected. Make a change in the repository to trigger a new execution.
+
+Services you should use
+
+    AWS CodeCommit for making changes.
+    AWS CodePipeline and AWS CodeBuild for verifying your change.
+
+Task Validation
+
+This task will be automatically marked as completed when the AWS CodePipeline pipeline completes a successful execution, specifically the Validate stage.
+
+Additionally, you can always check your progress by clicking on the Check my progress button on the Challenge Details screen.

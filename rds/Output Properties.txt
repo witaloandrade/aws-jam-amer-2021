@@ -1,0 +1,14 @@
+Output Properties
+CheckUrl 	http://18.237.95.107/index.php
+SourceDbName 	dmssmpl
+SourceEndpoint 	dmssmpl.cu8jpohhjzib.us-west-2.rds.amazonaws.com
+SourcePassword 	Fleshy_gave0Antony
+SourceUsername 	dmssample2
+TargetEndpoint 	labstack-prewarm-a0a73c3-auroramysqldatabaseaf3e5-n24dwrokxy97.cluster-cu8jpohhjzib.us-west-2.rds.amazonaws.com:3306
+TargetPassword 	Bill_strike5patent
+TargetUsername 	clusteradmin 
+
+
+Database Migration Jam Challenge
+
+Your secret answer key is 4X67VT977GFT76IKLNM

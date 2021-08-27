@@ -1,0 +1,25 @@
+ Task 2: Commit your notebook changes
+Backgroud
+
+In the previous task, you have successfully copied a S3 based notebook into your SageMaker Notebook Instance and tested out the function. The code works like a charm and you are ready to commit the code and call it a day.
+Your Task
+
+Now you need to commit the code change and save your work. Luckily, the DevOps team has already associated a CodeCommit repository with your Notebook Instance. All you need to do is to check-in your code. Like any git commit, you need to provide a summary of the code change. Once you push the code change, you can validate it in the CodeCommit repository.
+Inventory
+
+    SageMaker Notebook Instance: Sagemaker-Notebook-Code-Commit
+    CodeCommit Repository: sagemaker-notebook
+
+Service You Should Use
+
+    Amazon SageMaker
+    AWS CodeCommit
+
+Helpful Links
+
+    Associate Git Repositories with SageMaker Notebook Instances
+    Use Git Repositories in a Notebook Instance
+
+Task Validation
+
+The task will be automatically complete once you find the solution, in addition you can always check your progress by pressing the “Check my progress” Button in the challenge details screen.

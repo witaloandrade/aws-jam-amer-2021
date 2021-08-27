@@ -1,0 +1,47 @@
+ Task 2: What's next? Internet Web Access from the Private Instance
+Background:
+
+Congratulations on completing Task 1 !!! You should now have Internet Connectivity from the NAT Instance to the web server. However, currently the connection from the Private Instance to the Webserver Instance will time out as the VPC components have been misconfigured. Review the architecture diagram and let’s fix the configurations.
+Your Task:
+
+Log into the Private instance to troubleshoot outbound network connectivity. Make appropriate changes to AWS configurations until outbound traffic from the Private Instances to the Webserver Instance is working.
+
+Use the Bastion Instance to log into the Private Instance for testing.
+
+To successfully complete this task, you should accomplish the following:
+
+    Access the Webserver Instance IP from the Private Instance
+
+    You can verify the connectivity by running the following cURL command:
+
+     curl -Iv http://webserver-public-ip/ 
+
+    Things you should avoid doing:
+        Allowing “All traffic” from or to “0.0.0.0/0” or “Anywhere” in the security group and Network ACL rules (mainly inbound).
+        The HTTP application is running on port 80 on the Webserver Instance. Avoid allowing “ALL TCP” ports. Good alternatives are a single port or the ephemeral port range 1024-65535.
+        # Getting Started
+
+Log into the Private Instance by using the Bastion as the jump host. Using the steps in Task1, log into the bastion Instance. From there, use the following command to SSH into the Private Instance
+
+ssh ec2-user@10.0.2.4
+
+To have connectivity from the Private Instance to the Webserver Public IP via the NAT Instance you should have the right configurations on the Private Instance as well as the NAT Instance. Start by consulting the architecture diagram and thinking about the traffic flow. This will make it easier to get the right rules in the security group and NACLs for both the Instances (NAT and Private Instance). If you are not sure of the traffic flow, start by analyzing the VPC flow logs. Check the destination IP to see where the traffic is trying to go and to which port. Add the Security group and NACL rules accordingly.
+Inventory
+
+    Bastion Instance:
+        Public IP : You can get it from the Outputs Properties of this challenge
+    Private Instance:
+        Private IP: 10.0.2.4
+    WebServer Instance:
+        Public IP : You can get it from the Outputs Properties of this challenge (WebServerPublicIp)
+
+Services you should use
+
+    VPC
+    EC2
+
+Task Validation
+
+At the end of this task, you should be able to get a 200 O.K response for the cURL command. This will verify Internet Connectivity from the Private Instance. The task will automatically complete once you have the right VPC configurations.
+
+Note: The task won't complete if you have allowed traffic from 0.0.0.0/0 in the inbound rules. The task validation doesn't support security group referencing. You can allow CIDRs in security groups rules. Support for security group referencing will be added in the future updates.

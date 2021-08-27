@@ -1,0 +1,52 @@
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Action": [
+                "ec2:StopInstances",
+                "ec2:StartInstances"
+            ],
+            "Resource": [
+                "arn:aws:ec2:*:*:instance/*"
+            ],
+            "Effect": "Allow",
+            "Sid": "01AllowStopStartWithProjectTag"
+        },
+        {
+            "Action": [
+                "ec2:RunInstances"
+            ],
+            "Resource": [
+                "arn:aws:ec2:*::image/*",
+                "arn:aws:ec2:*:*:subnet/*",
+                "arn:aws:ec2:*:*:network-interface/*",
+                "arn:aws:ec2:*:*:security-group/*",
+                "arn:aws:ec2:*:*:key-pair/*"
+            ],
+            "Effect": "Allow",
+            "Sid": "AllowRunInstancesResourcesNoTags"
+        },
+        {
+            "Action": [
+                "ec2:RunInstances"
+            ],
+            "Resource": [
+                "arn:aws:ec2:*:*:instance/*",
+                "arn:aws:ec2:*:*:volume/*"
+            ],
+            "Effect": "Allow",
+            "Sid": "02AllowRunInstancesWithProjectTag"
+        },
+        {
+            "Action": [
+                "ec2:CreateTags"
+            ],
+            "Resource": [
+                "arn:aws:ec2:*:*:instance/*",
+                "arn:aws:ec2:*:*:volume/*"
+            ],
+            "Effect": "Allow",
+            "Sid": "03AllowCreateTagsOnRunInstances"
+        }
+    ]
+}

@@ -1,0 +1,16 @@
+ Task 3: Create the network
+Background
+You have been tasked by your manager to assist with the roll-out of a new application that will require access to data stored in an S3 bucket. As a proof of concept, you have been tasked to setup an environment to demonstrate how this will work.
+
+The bucket must be accessible from an EC2 instance, but not from the Internet. In addition, the application is expected to operate on the data without manual intervention. The need to access the data immediately will decrease 30 days after it is uploaded.
+Task
+
+Create the networking environment. Here are some details to get you started:
+
+    VPC
+        VPC should have tag Name with value of AnyCompany-VPC (capitalization and spelling count!)
+        VPC should have 1 Public Subnet
+
+Task Validation
+
+When you have completed the requirements, enter the VPC ID in the text box above and click Submit Answer to validate your work.

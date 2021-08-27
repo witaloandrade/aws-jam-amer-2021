@@ -1,0 +1,29 @@
+ Task 5: Copy file into S3 bucket from EC2 instance
+Background
+You have been tasked by your manager to assist with the roll-out of a new application that will require access to data stored in an S3 bucket. As a proof of concept, you have been tasked to setup an environment to demonstrate how this will work.
+
+The bucket must be accessible from an EC2 instance, but not from the Internet. In addition, the application is expected to operate on the data without manual intervention. The need to access the data immediately will decrease 30 days after it is uploaded.
+Task
+This final step requires you to connect to your EC2 instance and copy a file into your S3 bucket. The source bucket and file information is below.
+
+    Source bucket location:
+        aws-jam-challenge-resources/s-3-access-from-ec-2
+    File name:
+        JamChallengeFile.txt
+
+Helpful hints
+
+    You have all the permissions you need in order to copy the file from the source bucket. You do not need to perform a list action on the source bucket.
+
+Task Validation
+
+Once the file has been copied into your bucket, open the file to reveal the secret message! Enter the secret message in the text box above and click Submit Answer to validate your work.
+
+
+
+[ec2-user@ip-10-0-0-177 ~]$aws s3 cp s3://aws-jam-challenge-resources/s-3-access-from-ec-2/JamChallengeFile.txt s3://team-zap-8645132154688/JamChallengeFile.txt
+[ec2-user@ip-10-0-0-177 ~]$ aws s3 cp s3://team-zap-8645132154688/JamChallengeFile.txt JamChallengeFile.txt
+download: s3://team-zap-8645132154688/JamChallengeFile.txt to ./JamChallengeFile.txt
+[ec2-user@ip-10-0-0-177 ~]$ cat JamChallengeFile.txt
+
+AWSomeJob!YouRock!

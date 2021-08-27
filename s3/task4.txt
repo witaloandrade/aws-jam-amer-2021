@@ -1,0 +1,18 @@
+ Task 4: Create an EC2 instance
+Background
+You have been tasked by your manager to assist with the roll-out of a new application that will require access to data stored in an S3 bucket. As a proof of concept, you have been tasked to setup an environment to demonstrate how this will work.
+
+The bucket must be accessible from an EC2 instance, but not from the Internet. In addition, the application is expected to operate on the data without manual intervention. The need to access the data immediately will decrease 30 days after it is uploaded.
+Task
+
+This task requires you to launch a Linux EC2 instance that has access to your S3 bucket. You will need to SSH into the instance after it has launched.
+
+Helpful hints
+
+    If you do not see the IAM role created in Task 2 when launching the EC2 instance, recreate the IAM role but this time verify EC2 is selected as the trusted entity.
+    Ensure you deploy your EC2 instance inside the VPC used to validate Task 3. This could cause an issue when validating this task.
+    Ensure the EC2 Instance has a Public IP address so you can connect to it. You can select this when you launch the instance or configure the setting on the subnet.
+
+Task Validation
+
+When you have completed the requirements, enter the EC2 Instance ID in the text box above and click Submit Answer to validate your work.

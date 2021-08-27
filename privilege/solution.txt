@@ -1,0 +1,33 @@
+Triple check if you really assumed the role "JamRole-EC2Admin" (or or "JamRole-S3Access") using the "Switch Role" feature after initial account login! Don't skip this step - otherwise the challenge will not work! Do all the following steps in the context of the role "JamRole-EC2Admin" - unless otherwise noted.
+
+After a detailed inspection of the PermissionBoundary policy blacklist, you'll notice that the policy writer forgot the IAM action iam:UpdateAssumeRolePolicy. This action allows the modification of the "Trusted Entities" of a role.
+
+To exploit the issue, do the following:
+
+    In your Console, open the role JamRole-EmergencyAdministration
+    Go to the tab "Trust relationships".
+    Edit the Policy and add your Account as a second "Trusted Entity". Your new policy should look like this:
+
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Effect": "Allow",
+      "Principal": {
+        "AWS": [
+          "arn:aws:iam::339644790936:root",
+          "arn:aws:iam::YOUR_ACCOUNT_NUMBER_HERE:root"
+        ]
+      },
+      "Action": "sts:AssumeRole",
+      "Condition": {}
+    }
+  ]
+}
+
+    Do a "Role Switch" into the role "JamRole-EmergencyAdministration". At this point you have full admin rights.
+
+    In the AWS Console, go to Lambda. Find the Lambda function "getSecret" and invoke the function. The return value is the solution to this challenge.
+
+    CONGRATULATIONS - You are done!
+

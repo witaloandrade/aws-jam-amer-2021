@@ -1,0 +1,29 @@
+ Task 1: Valley of Peace
+
+Background Bo has been working on a Jupyter notebook (complete with notes) upload it into Sagemaker and start working through his data entry.
+
+Your Task Download the Jupyter notebook and upload it into your Sagemaker instance. Follow Bo’s comments to execute his code. Be mindful of errors.
+
+Getting Started
+
+    Download Bo's Notebook using the address below.
+    Open the Amazon Sagemaker console by navigating to the Sagemaker service in the AWS Management Console.
+    Under Notebook choose Notebook instances.
+    Open the "BONOODLEHOUSE-xxxxxxx" instance.
+    Open Jupyter
+    Upload Bo's Notebook(from step 1) into Sagemaker and open it. Start troubleshooting Bo’s Code.
+    If prompted Kernel should be set to "conda_python3"
+
+Inventory
+
+Bo's Notebook can be downloaded from here.
+
+https://aws-jam-challenge-resources.s3.amazonaws.com/panda-kung-fu/BoNoteBook.ipynb
+
+Services you should use
+
+    Sagemaker
+
+Task Validation
+
+A cell will execute telling you the input code. When submitting do not include punctuation and symbols.

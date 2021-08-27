@@ -1,0 +1,29 @@
+
+Overview
+
+The AWS Team of your company just set up a new, more secure IAM concept. It is your job to evaluate the security level of the implementation. Can you break out of your role and get administrative access?
+Completed!
+A Bit of Background:
+
+You are the security auditor within your company. The AWS Team of your company just set up a new, more secure IAM concept. It is your job to evaluate the security level of the implementation. The core of the IAM concept is „Privilege Separation“ via roles.
+
+The following roles were created:
+
+    JamRole-EC2Admin (this role is used by you and your team to perform all high privilege EC2 actions)
+    JamRole-S3Access (this role will be used by authorized teams for full S3 access)
+    JamRole-ServerlessAdmin (this role gives the 3rd party serverless dev team access to typical serverless AWS Services, such as DynamoDB and Lambda)
+    JamRole-EmergencyAdministration (full administrative access role in the account that might be assumed by the central CERT team)
+    Other misc JamRoles used for Cross-Account-Access.
+    Please ignore any other roles, especially any AWSLabs* role.
+
+You enter the account with the "AWSLabsUser-*" role. Following the role concept, you should ONLY be able to assume the role "JamRole-EC2Admin“ and "JamRole-S3Access".
+
+    With those roles, you should NOT be able assume any other roles!
+    With those roles, you should NOT have full administrative access.
+
+Your Task:
+
+    You enter the account in the role "AWSLabsUser-*". Assume the role "JamRole-EC2Admin" or "JamRole-S3Access" using the "Switch Role" feature!
+    Evaluate each role and policy with the prefix "JamRole" from the perspective of the different roles you are allowed to assume.
+    Find the weakness in the IAM role concept that gives you full administrative access.
+    Exploit the weakness. Execute the lambda function „getSecret“ as a proof of concept. The return value of the lambda function is the secret key for the solution.

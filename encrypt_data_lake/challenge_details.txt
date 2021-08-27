@@ -1,0 +1,31 @@
+
+ Encrypt the Data Lake 
+Your AWS Account has the following resources:
+
+    A Data Lake S3 bucket with hundreds of objects, some of which are not encrypted.
+    A Customer Managed KMS Key that must be used to encrypt at rest all current and future objects in the data lake. (There is only one in the account)
+    An S3 Inventory file. For this challenge a single inventory CSV file is pre-created for you.
+    An IAM Role (FixEncryptionRole) that can and should be used when fixing the encryption error
+
+Requirements
+
+Your job is to bring your data lake in compliance with policy by:
+
+    Encrypting the existing objects in the Data Lake using a scalable method.
+    Configuring the Data Lake S3 bucket so that new objects are encrypted by default with the Customer Managed KMS key.
+
+Hints:
+
+    Make sure you complete the requirements above, in order
+    While the S3 Console allows you to change the encryption for a small number of objects, this method does not scale to millions or billons of objects. The challenge verification will not award full points if you don't use a scalable method to encrypt objects.
+    Make sure you are using the generated KMS key not the S3 KMS key
+    After you have completed the task, clicking check my progress will verify you have completed the challenge
+
+Helpful Links
+
+Here are a few links to help you with the challenge:
+
+    S3 Batch Operations
+    https://docs.aws.amazon.com/AmazonS3/latest/userguide/batch-ops.html
+    Amazon S3 Default Encryption for S3 Buckets
+    https://docs.aws.amazon.com/AmazonS3/latest/userguide/bucket-encryption.html

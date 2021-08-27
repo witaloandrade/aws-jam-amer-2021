@@ -1,0 +1,18 @@
+ Task 2: Create the role with an S3 policy
+Background
+You have been tasked by your manager to assist with the roll-out of a new application that will require access to data stored in an S3 bucket. As a proof of concept, you have been tasked to setup an environment to demonstrate how this will work.
+
+The bucket must be accessible from an EC2 instance, but not from the Internet. In addition, the application is expected to operate on the data without manual intervention. The need to access the data immediately will decrease 30 days after it is uploaded.
+Task
+
+Create an IAM role with a policy that provides access to the S3 bucket.
+
+Name the role company-role. (spelling and capitalization count!)
+
+Helpful hints
+
+    You do not need to create an IAM Policy for this challenge. You only need to create an IAM role and can attach an existing AWS managed policy to your role.
+
+Task Validation
+
+When you have completed the requirements, click the orange Check my progress button at the top of this page.

@@ -1,0 +1,50 @@
+ Task 2: Automate the Updation of Customer Profile
+BACKGROUND:
+
+Congratulations! We now have a successfully tested lambda function that can update the customer profile in near real time whenever the customer makes a transaction.
+
+But, we are not done. The lambda function must be automatically triggered whenever the customer completes a new transaction so that the customer profile can be updated in near real time.
+
+Once we achieve this, when a customer makes a qualifying transaction, their profile status will be updated to "Elite" automatically and the front-end staff can immediately give them the Elite card and an invite to the exclusive event.
+
+You're thrilled at the prospect of contributing to customer delight and get cracking right away to trigger the lambda whenever an item is inserted in the "CustTransactions" table.
+
+ 
+YOUR TASK:
+
+You must make the required changes to automatically trigger the lambda function, 'JAM_Lambda_Exec_Function_EDIT_THIS' whenever an item is inserted in the "CustTransactions" table.
+
+ 
+TASK VALIDATION:
+
+Once you enable the lambda function to be triggered when an item is added to the "CustTransactions" table, the verification will be completed automatically and the task will be marked complete.
+
+Note: Based on the parameters you choose, it might take a few minutes for the lambda to be triggered and for the verification process to confirm the completion of the challenge.
+
+ 
+INVENTORY:
+
+ 
+Lambda Function: JAM_Lambda_Exec_Function_EDIT_THIS
+
+ 
+CustTransactions Table Schema:
+Field 	Type 	Description
+CustID 	string 	Unique identifier for customer
+TnNum 	integer 	Unique identifier for transaction
+TnValue 	integer 	Dollar value of transaction
+------------- 	----------- 	--------------------------------
+
+ 
+CustProfile Table Schema:
+Field 	Type 	Description
+CustID 	string 	Unique identifier for customer
+TotalTnValue 	integer 	Total Dollar value of all customer spend
+CustStatus 	string 	Normal / Elite
+------------------- 	----------- 	--------------------------
+
+ 
+SERVICES YOU SHOULD USE:
+
+    LAMBDA
+    DYNAMODB STREAMS

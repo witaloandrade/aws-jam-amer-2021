@@ -1,0 +1,27 @@
+Verification Results
+20 examples, 0 failures
+
+Finished in 7.462510213 seconds
+
+Verify Policy:
+Red Role Must be allowed to Stop Red Instance0.108496279s
+Red Role Must be allowed to Start Red Instance0.102165119s
+Red Role Must NOT be allowed to Stop Green Instance0.113147293s
+Red Role Must NOT be allowed to Start Green Instance0.117590685s
+Green Role Must be allowed to Stop Green Instance0.104103677s
+Green Role Must be allowed to Start Green Instance0.075626783s
+Green Role Must NOT be allowed to Stop Red Instance0.075306214s
+Green Role Must NOT be allowed to Start Red Instance0.100975502s
+Red Role Must be allowed to Launch an EC2 Instance with tag Project = Red0.730472555s
+Red Role Must NOT be allowed to Launch an EC2 Instance with no tags0.584005542s
+Red Role Must NOT be allowed to Launch an EC2 Instance with tag Project = Green0.60521406s
+Red Role Must NOT be allowed to Launch an EC2 Instance with tag project = Red (project is all lowercase)0.630622615s
+Red Role Must NOT be allowed to Launch an EC2 Instance with tag Project = red (red is all lowercase)0.595818682s
+Red Role Must NOT be allowed to edit tags on an EC2 Instance outside of RunInstances0.165299195s
+Green Role Must be allowed to Launch an EC2 Instance with tag Project = Green0.609319422s
+Green Role Must NOT be allowed to Launch an EC2 Instance with no tags0.836832514s
+Green Role Must NOT be allowed to Launch an EC2 Instance with tag Project = Red0.556668707s
+Green Role Must NOT be allowed to Launch an EC2 Instance with tag project = Green (project is all lowercase)0.669551322s
+Green Role Must NOT be allowed to Launch an EC2 Instance with tag Project = green (green is all lowercase)0.520665398s
+Green Role Must NOT be allowed to Create Tags on an EC2 Instance outside of RunInstances0.086893731s
+Congratulations you've solved the challenge: the answer is AttributeBasedAccessControl

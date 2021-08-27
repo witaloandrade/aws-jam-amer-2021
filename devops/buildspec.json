@@ -1,0 +1,29 @@
+################################################################################
+# AWS CODEBUILD STUFF
+################################################################################
+
+#
+# Reference:
+# https://docs.aws.amazon.com/codebuild/latest/userguide/build-spec-ref.html
+#
+
+{
+
+# Define the version of the buildspec syntax we are using.
+# The recommended version to use is 0.2
+"version": 0.2
+
+# Define the various phases of the build
+"phases":{"build":{"commands":[
+
+# Is this file really a valid JSON file?
+# Let's make sure it is. After all, I bought out Yamil. JSON FTW!!!
+"jq . buildspec.json",
+
+# Jason's Notes:
+# - What more do we need to do here?
+# - Need to get some engineers who really understands this stuff.
+# - But we need funding first!
+]}}}
+
+################################################################################

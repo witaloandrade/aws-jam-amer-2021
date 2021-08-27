@@ -1,0 +1,83 @@
+ Task 1: Complete Lambda to Update Customer Profile
+BACKGROUND:
+
+The documents left behind by the developer indicates that the 2 DynamoDB tables below can be leveraged to achieve the business goal.
+Table Name 	Description
+CustTransactions 	Stores all customer transactions
+Cust Profile 	Stores customer profile
+------------------------ 	--------------------------------
+
+ 
+
+In the customer profile table, the developer added 2 additional fields to capture the total spend of a customer and the corresponding Customer Status - "Normal" or "Elite".
+
+The developer also started working on a lambda function, "JAM_Lambda_Exec_Function_EDIT_THIS", that will accept changes to the CustTransactions table as an event and update the Cust Profile table. The lambda is missing some code and the developer helpfully added the comment "YOUR CODE GOES HERE" to indicate these places.
+
+ 
+YOUR TASK:
+
+As a first step, you have to complete the lambda function to update the total transaction value and customer status in the CustProfile table whenever the customer makes a new transaction. The Inventory section below provides the name of the lambda and the schema of the DynamoDB tables. Use this information to complete the task. Once you update the lambda function, you will use the test event in the Task Validation section below to test the function.
+
+ 
+TASK VALIDATION:
+
+Once you complete the lambda function by filling in the missing code, test the function with the below event:
+
+{
+   "Records": [
+        {
+            "eventName": "INSERT",
+            "eventSource": "aws:dynamodb",
+            "dynamodb": {
+                "Keys": {
+                    "CustID": {
+                        "S": "task1test1record"
+                    },
+                    "TnValue": {
+                        "N": "250"
+                    }
+                }
+            }
+        }
+    ]
+}
+
+Once you successfully test the lambda, it will be verified automatically and the task will be marked as complete within a few minutes.
+
+ 
+INVENTORY:
+
+ 
+Lambda Function: JAM_Lambda_Exec_Function_EDIT_THIS
+
+ 
+
+CustTransactions Table Schema:
+Field 	Type 	Description
+CustID 	string 	Unique identifier for customer
+TnNum 	integer 	Unique identifier for transaction
+TnValue 	integer 	Dollar value of transaction
+------------- 	----------- 	--------------------------------
+
+ 
+
+CustProfile Table Schema:
+Field 	Type 	Description
+CustID 	string 	Unique identifier for customer
+TotalTnValue 	integer 	Total Dollar value of all customer spend
+CustStatus 	string 	Normal / Elite
+------------------- 	----------- 	--------------------------
+
+   
+GETTING STARTED:
+
+Go to the lambda console. If you don't see a list of lambdas, click on "Services" on the top left of the console and choose "Lambda" to see the list of lambdas.
+
+Do the same if the list of lambdas disappears at some point. This is because the Team Role is blocked from accessing the task verification lambdas.
+
+ 
+SERVICES YOU SHOULD USE:
+
+    LAMBDA
+
+https://boto3.amazonaws.com/v1/documentation/api/latest/guide/dynamodb.html

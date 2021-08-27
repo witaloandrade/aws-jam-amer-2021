@@ -1,0 +1,52 @@
+
+
+Your company has engaged a Managed Service Provider (MSP) named ACME Corp to migrate your Oracle database to AWS. ACME Corp was to support your company database with multiple dedicated Database Administrators (DBA).
+
+After a significant investment of money and time, ACME Corp was able to migrate to AWS.
+
+Unfortunately, the ACME Corp migration of the Oracle database was poorly done. The target architecture is not highly available and the operational costs are higher than originally projected.
+
+You have been tasked by the CIO to migrate off of the Oracle database to a highly scalable, highly available, and fully managed database system.
+
+In this challenge you will use the AWS Databae Migration Service (DMS) to migrate from the ACME Corp Oracle database to a shiny new Aurora MySQL database.
+Summary
+
+AnyCompany built the company database using Oracle. The database has not been built using a highly available architecture or in a way that will keep operational costs low.
+
+The company CIO has tasked you with migrating the database from Oracle to Amazon Aurora MySQL.
+
+After researching the options, you have determined that AWS Database Migration Service is the right tool for the job.
+
+Using DMS will allow the source database to remain fully operational during the migration, helping to minimize downtime for applications that rely on the database.
+The Challenge
+
+Use the Database Migration Service (DMS) Migration Wizard to setup the Database Migration Task.
+
+The Database Migration Task will replicate from Oracle to Aurora MySQL. The Credentials for Oracle and Aurora are in the challenge output section.
+
+Oracle's Database port is: 1521
+
+MySQL's Database port is: 3306
+
+There is a Security Group for use with the Database Migration Instance: Replication-Instance-SG
+
+The Oracle Database SID is: DMSSMPL
+
+The Oracle Database Schema is: DMS_SAMPLE
+
+Be sure to use the VPC named: DbMigrateJam
+
+You do not need to use Schema Conversion Tool (SCT)
+While setting up the "Tasks" for replication:
+
+    Keep the default value for Target Table Operations Mode
+    Include LOB (Large Object Binary) columns in replication by setting the Max LOB size
+
+Monitoring DMS Progress
+
+Under the DMS Task, click on Table Statistics. You will be able to monitor individual tables, number of rows inserted, and state.
+
+The DMS Task may display an error about Replicating with Errors. It is possible for a DMS Task to successfully replicate a database while still encountering trivial errors that do not impact the data integrity.
+How to validate the challenge?
+
+In the Output Properties section there is a link titled: CheckURL. The CheckURL webpage will provide you with details of the challenge progress. After the DMS Task has completed successfully, a secret answer will be displayed. Cut-and-paste the secret answer to complete the jam challenge. The answer is CaSe SeNsItIvE, so ensure to copy the answer instead of re-typing it.

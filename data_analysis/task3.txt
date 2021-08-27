@@ -1,0 +1,23 @@
+ Task 3: If you only do what you can do, you will never be more than who you are.
+
+Background
+
+Bo is starting his first Kung Fu lessons! He is a very excited panda! However he messed up some data for week 2. Can you fix it and get the TotalRevenue?
+
+Your Task
+
+Continue through the Jupyter Notebook and determine the Total Revenue for week 2. Round down to the nearest 3 digit number.
+
+Getting Started
+
+Continue working through Bo's notebook from Task 1 & 2.
+
+Bo's Notebook can be downloaded from here.
+
+Services you should use
+
+    Sagemaker
+
+Task Validation
+
+You need to execute the cells in the notebook and run panda commands to get the correct sum. There are a few items you will need to troubleshoot.
